@@ -32,7 +32,7 @@ class InitController extends AbstractController
             $entityManager->flush();
         }
 
-        return new Response('Initialisation done.');
+        return ('Initialisation done.');
 
     }
 }
