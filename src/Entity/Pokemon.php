@@ -8,7 +8,9 @@ use App\Repository\PokemonRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     collectionOperations={"get"},
+ * )
  * @ORM\Entity(repositoryClass=PokemonRepository::class)
  */
 class Pokemon
@@ -19,6 +21,10 @@ class Pokemon
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    private $name;
+
+
 
     /**
      * * @ORM\ManyToOne(targetEntity="App\Entity\PokemonPatern", inversedBy="pokemons")
